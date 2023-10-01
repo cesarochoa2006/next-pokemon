@@ -33,11 +33,11 @@ export const PokemonDetail: NextPage<Props> = ({ pokemon }) => {
                 </Card>
 
                 <Card className='md:col-span-2 bg-slate-900'>
-                    <CardHeader className='flex flex-row justify-around items-center'>
+                    <CardHeader className='flex sm:flex-col md:flex-row justify-around items-center'>
                         <h1 className='uppercase text-xl'>{pokemon.name}</h1>
                         <span className='flex-1'></span>
                         <div className="flex items-center space-x-2">
-                            <Label htmlFor="addFavorite">Add to favorites</Label>
+                            <Label htmlFor="addFavorite">Agregar a favoritos</Label>
                             <Switch
                                 id="addFavorite"
                                 checked={favorite}

@@ -46,12 +46,16 @@ export function getFavorites(): number[] {
 }
 
 export async function getPokemonInfoBy(nameOrId: string) {
-  const { data } = await pokeApi.get<Pokemon>(`/pokemon/${nameOrId}`);
-  return {
-    pokemon: {
-      id: data.id,
-      name: data.name,
-      sprites: data.sprites,
-    },
-  };
+  try {
+    const { data } = await pokeApi.get<Pokemon>(`/pokemon/${nameOrId}`);
+    return {
+      pokemon: {
+        id: data.id,
+        name: data.name,
+        sprites: data.sprites,
+      },
+    };
+  } catch (err) {
+    return null;
+  }
 }
